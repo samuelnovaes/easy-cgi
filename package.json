@@ -1,0 +1,39 @@
+{
+	"name": "easy-cgi",
+	"version": "1.0.0",
+	"description": "Easily create a CGI server",
+	"main": "index.js",
+	"dependencies": {
+		"body-parser": "^1.18.2",
+		"compression": "^1.7.1",
+		"cgi": "^0.3.1",
+		"connect-multiparty": "^2.1.0",
+		"cors": "^2.8.4",
+		"express": "^4.16.2",
+		"walk": "^2.3.9"
+	},
+	"bin": {
+		"cgi": "index.js"  
+	},
+	"devDependencies": {},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/samuelnovaes/easy-cgi.git"
+	},
+	"keywords": [
+		"easy",
+		"cgi",
+		"server",
+		"http",
+		"web"
+	],
+	"author": "Samuel Novaes Sena",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/samuelnovaes/easy-cgi/issues"
+	},
+	"homepage": "https://github.com/samuelnovaes/easy-cgi#readme"
+}
