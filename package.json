@@ -1,15 +1,16 @@
 {
 	"name": "easy-cgi",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "Easily create a CGI server",
 	"main": "index.js",
 	"dependencies": {
 		"body-parser": "^1.18.2",
-		"compression": "^1.7.1",
 		"cgi": "^0.3.1",
+		"compression": "^1.7.1",
 		"connect-multiparty": "^2.1.0",
 		"cors": "^2.8.4",
 		"express": "^4.16.2",
+		"serve-static": "^1.13.1",
 		"walk": "^2.3.9"
 	},
 	"bin": {

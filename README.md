@@ -60,7 +60,8 @@ Example:
 
 - For the `app/hello.sh` file, the route is `/hello`
 - For the `app/foo/bar.sh` file, the route is `/foo/bar`
-- For the `app/index.sh` file, the route is `/` or `/index`
+- For the `app/index.sh` file, the route is `/`
+- For the `app/foo/index.sh` file, the route is `/foo`
 
 > If you create a `app/src` directory, it will be ignored
 
@@ -71,7 +72,7 @@ Dynamic routes are created adding underscore in file name or directory
 Example:
 
 - For the `app/users/_id.sh` file, the route is `/users/<id>`
-- For the `app/_foo/bar.sh` file, the route is `app/<foo>/bar`
+- For the `app/_foo/bar.sh` file, the route is `/<foo>/bar`
 
 # Get request values
 
@@ -90,3 +91,7 @@ The REQUEST environment variable looks like
 ```
 
 > No sessions are supported yet
+
+# Static files
+
+To serve static files, create a `static` directory
