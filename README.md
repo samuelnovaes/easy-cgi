@@ -66,7 +66,7 @@ Example:
 
 ### Dynamic routes
 
-Dynamic routes are created adding underscore in file name
+Dynamic routes are created adding underscore in file name or directory
 
 Example:
 
