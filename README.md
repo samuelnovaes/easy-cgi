@@ -2,8 +2,6 @@
 
 [![NPM](https://nodei.co/npm/easy-cgi.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/easy-cgi/)
 
-Create a directory for your app whith your CGI executable files.
-
 # Installation
 
 - Install [Node.js](https://nodejs.org)
@@ -14,6 +12,8 @@ npm install -g easy-cgi
 ```
 
 # Example (Using Bash)
+
+Create a directory for your app whith your CGI executable files.
 
 App directory
 
