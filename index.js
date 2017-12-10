@@ -18,11 +18,13 @@ app.use(multipart())
 app.use(compression())
 
 walker.on('file', (root, file, next) => {
-	let route = `${root.replace(new RegExp(`^${process.cwd()}`), '')}/${path.parse(file.name).name}`
-	route = route.replace(/_/g, ':')
-	app.all(route, setEnv, cgi(`${root}/${file.name}`))
-	if(route == '/index'){
-		app.all('/', setEnv, cgi(`${root}/${file.name}`))
+	if(root != path.join(process.cwd(), 'src')){
+		let route = `${root.replace(new RegExp(`^${process.cwd()}`), '')}/${path.parse(file.name).name}`
+		route = route.replace(/_/g, ':')
+		app.all(route, setEnv, cgi(`${root}/${file.name}`))
+		if(route == '/index'){
+			app.all('/', setEnv, cgi(`${root}/${file.name}`))
+		}
 	}
 	next()
 })

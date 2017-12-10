@@ -62,6 +62,8 @@ Example:
 - For the `app/foo/bar.sh` file, the route is `/foo/bar`
 - For the `app/index.sh` file, the route is `/` or `/index`
 
+> If you create a `app/src` directory, it will be ignored
+
 ### Dynamic routes
 
 Dynamic routes are created adding underscore in file name
