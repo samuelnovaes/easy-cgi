@@ -33,21 +33,25 @@ console.log()
 
 walker.on('file', (root, file, next) => {
 	if(root != path.join(dir, 'src') && root != staticDir){
-		let filename = path.parse(file.name).name
-		let route = `${root.replace(new RegExp(`^${dir}`), '')}/${filename == 'index' ? '' : filename}`
-		route = route.replace(/_/g, ':')
-		console.log(route)
-		app.all(route, (req, res, next) => {
-			console.log(req.method, req.path, `from ${get_ip(req).clientIp}`)
-			process.env.REQUEST = JSON.stringify({
-				body: req.body,
-				params: req.params,
-				query: req.query,
-				headers: req.headers,
-				files: req.files
-			})
-			next()
-		}, cgi(`${root}/${file.name}`))
+		fs.access(`${root}/${file.name}`, fs.constants.X_OK, err => {
+			if(!err){
+				let filename = path.parse(file.name).name
+				let route = `${root.replace(new RegExp(`^${dir}`), '')}/${filename == 'index' ? '' : filename}`
+				route = route.replace(/_/g, ':')
+				console.log(route)
+				app.all(route, (req, res, next) => {
+					console.log(req.method, req.path, `from ${get_ip(req).clientIp}`)
+					process.env.REQUEST = JSON.stringify({
+						body: req.body,
+						params: req.params,
+						query: req.query,
+						headers: req.headers,
+						files: req.files
+					})
+					next()
+				}, cgi(`${root}/${file.name}`))
+			}
+		})
 	}
 	next()
 })
